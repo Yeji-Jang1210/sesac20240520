@@ -9,14 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var labelList: [UILabel]!
     @IBOutlet var firstButton: UIButton!
     @IBOutlet var secondButton: UIButton!
     @IBOutlet var thirdButton: UIButton!
-    
-    @IBOutlet var firstLabel: UILabel!
-    @IBOutlet var secondLabel: UILabel!
-    @IBOutlet var thirdLabel: UILabel!
-    
     
     var count = Array(repeating: 0, count: 3)
     
@@ -25,9 +21,10 @@ class ViewController: UIViewController {
         
         //labelName: 매개변수(paramter)
         //firstLabel, ..: 전달인자(argument)
-        designLabelUI(firstLabel, textColor: .red)
-        designLabelUI(secondLabel, textColor: .orange)
-        designLabelUI(thirdLabel, textColor: .blue)
+        for label in labelList {
+            designLabelUI(label, textColor: .red)
+        }
+        
         
         //():함수 호출 연산자
         designButtonUI(firstButton, title: "클릭1", textColor: .red)
@@ -58,12 +55,11 @@ class ViewController: UIViewController {
     //어떤 버튼을 클릭했는지 우찌 알죠
     //1. currentTitle을 사용하기(옵셔널 조심, 버전 조심)
     //2. tag를 활용하기
+    //3. 아울렛 머 어떻게 못할까? @IBOutletCollection
     @IBAction func buttonTapped(_ sender: UIButton) {
         count[sender.tag] = count[sender.tag] + 1
         
-        firstLabel.text = "\(count[0]) 번"
-        secondLabel.text = "\(count[1]) 번"
-        thirdLabel.text = "\(count[2]) 번"
+        labelList[sender.tag].text = "\(count[sender.tag]) 번"
     }
     
 }

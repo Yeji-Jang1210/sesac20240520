@@ -88,11 +88,11 @@
                     </view>
                     <connections>
                         <outlet property="firstButton" destination="PNm-qw-sBv" id="Pgu-QF-qgT"/>
-                        <outlet property="firstLabel" destination="A2M-4x-0uy" id="7Bz-fh-x7r"/>
                         <outlet property="secondButton" destination="NbU-oJ-AHz" id="1Aj-hi-QvY"/>
-                        <outlet property="secondLabel" destination="C8z-4m-FPH" id="M8B-EB-2af"/>
                         <outlet property="thirdButton" destination="BZ8-dQ-sUi" id="nA6-VK-Eof"/>
-                        <outlet property="thirdLabel" destination="yvv-MT-mQ9" id="nKD-cN-crn"/>
+                        <outletCollection property="labelList" destination="A2M-4x-0uy" collectionClass="NSMutableArray" id="0dy-mM-O0c"/>
+                        <outletCollection property="labelList" destination="C8z-4m-FPH" collectionClass="NSMutableArray" id="5Di-mn-Vcy"/>
+                        <outletCollection property="labelList" destination="yvv-MT-mQ9" collectionClass="NSMutableArray" id="xKp-Fs-bMg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
