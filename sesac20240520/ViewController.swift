@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var secondButton: UIButton!
     @IBOutlet var thirdButton: UIButton!
     
+    
     var count = Array(repeating: 0, count: 3)
     
     override func viewDidLoad() {
@@ -60,6 +61,16 @@ class ViewController: UIViewController {
         count[sender.tag] = count[sender.tag] + 1
         
         labelList[sender.tag].text = "\(count[sender.tag]) 번"
+    }
+    
+    @IBAction func imageViewTapped(_ sender: Any) {
+        print("tapped")
+    }
+    
+    //1. did end on exit -> return 키에 한정된 기능
+    //2. 키보드가 올라가 있다는 것은 사용자가 무언가를 편집(Editing) 하고 있다는 뜻
+    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
 }
