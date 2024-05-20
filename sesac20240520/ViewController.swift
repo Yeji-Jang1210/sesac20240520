@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet var secondLabel: UILabel!
     @IBOutlet var thirdLabel: UILabel!
     
+    
+    var count = Array(repeating: 0, count: 3)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,8 +55,15 @@ class ViewController: UIViewController {
         button.setTitle(title, for: .normal)
     }
     
+    //어떤 버튼을 클릭했는지 우찌 알죠
+    //1. currentTitle을 사용하기(옵셔널 조심, 버전 조심)
+    //2. tag를 활용하기
     @IBAction func buttonTapped(_ sender: UIButton) {
-        firstLabel.text = "Tapped"
+        count[sender.tag] = count[sender.tag] + 1
+        
+        firstLabel.text = "\(count[0]) 번"
+        secondLabel.text = "\(count[1]) 번"
+        thirdLabel.text = "\(count[2]) 번"
     }
     
 }
